@@ -15,6 +15,7 @@ const TwoPlayerGameBoard = () => {
   const [isMyTurn, setIsMyTurn] = useState(() => mode === "create");
   const [isGameOver, setIsGameOver] = useState(false);
   const [isMeWin, setIsMeWin] = useState(false);
+  const [isDraw, setIsDraw] = useState(false);
   const nav = useNavigate();
 
   const overMessages = [
@@ -86,6 +87,7 @@ const TwoPlayerGameBoard = () => {
         (latest === "Player X won!" && mySymbol === "X") ||
           (latest === "Player O won!" && mySymbol === "O")
       );
+      if (latest === "Match draw!") setIsDraw(true);
     }
     toast(latest, {
       style: {
@@ -117,6 +119,8 @@ const TwoPlayerGameBoard = () => {
                   : "Waiting for Opponent..."
                 : isMeWin
                 ? "You Won! 🎉"
+                : isDraw
+                ? "It's a Draw! 🤝"
                 : "You Lost! 😢"}
             </td>
             {isGameOver && (
