@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-comic: "Comic Relief", system-ui;
+  --font-delius: "Delius Unicase", cursive;
+}
+
+body {
+  @apply bg-black text-neutral-100;
+}
+
+.section {
+  @apply min-h-dvh flex flex-col items-center w-full px-4;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-2xl inline-flex items-center tracking-normal cursor-pointer
+    font-semibold hover:scale-105 transition-all duration-200 ease-in-out;
+}
+
+.theme-gradient {
+  @apply bg-gradient-to-br from-pink-600 to-purple-600 text-white;
+}
+
+.btn-sm {
+  @apply px-4 py-1 rounded-lg inline-flex items-center tracking-normal cursor-pointer text-sm;
+}
